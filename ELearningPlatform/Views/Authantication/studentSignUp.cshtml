@@ -1,0 +1,66 @@
+﻿@{
+	Layout = null; 
+}
+@model StudentAccount
+
+<link rel="stylesheet" href="/css/SignUp.css">
+<div class="Title">
+	<h1>E-Learning</h1>
+</div>
+<div class="container">
+	<h1>Sign Up</h1>
+	<form asp-action="Student_Register" style="display: flex; flex-direction: column; gap: 5px;">
+		<div style="display:flex; gap:20px;">
+			<div class="form-group" style="flex:1;">
+				<label for="Name">Full Name</label>
+				<input asp-for="Name" required>
+				<span asp-validation-for="Name" class="text-danger" style="color:red"> </span>
+			</div>
+			<div class="form-group" style="flex:1;">
+				<label for="username">User Name</label>
+				<input asp-for="UserName" required>
+				<span asp-validation-for="UserName" class="text-danger" style="color:red"> </span>
+			</div>
+		</div>
+
+		<div style="display:flex; gap:20px;">
+			<div class="form-group" style="flex:1;">
+				<label for="email">Email Address</label>
+				<input asp-for="Email" required>
+				<span asp-validation-for="Email" class="text-danger" style="color:red"> </span>
+			</div>
+			<div class="form-group" style="flex:1;">
+				<label for="phone">Phone Number</label>
+				<input asp-for="PhoneNumber" required>
+				<span asp-validation-for="PhoneNumber" class="text-danger" style="color:red"> </span>
+			</div>
+		</div>
+
+		<div style="display:flex; gap:20px;">
+			<div class="form-group" style="flex:1;">
+				<label for="gender">Gender</label>
+				<input asp-for="Gender" required>
+				<span asp-validation-for="Gender" class="text-danger" style="color:red"> </span>
+			</div>
+			<div class="form-group" style="flex:1;">
+				<label for="country">Country</label>
+				<input asp-for="Country" required>
+				<span asp-validation-for="Country" class="text-danger" style="color:red"> </span>
+			</div>
+		</div>
+
+		<div style="display:flex; gap:20px;">
+			<div class="form-group" style="flex:1;">
+				<label for="password">Password</label>
+				<input asp-for="Password" required>
+				<span asp-validation-for="Password" class="text-danger" style="color:red"> </span>
+			</div>
+			<div class="form-group" style="flex:1;">
+				<label for="confirmpassword">Confirm Password</label>
+				<input asp-for="ConfirmPassword" required>
+				<span asp-validation-for="ConfirmPassword" class="text-danger" style="color:red"> </span>
+			</div>
+		</div>
+		<button type="submit">Create Account</button>
+	</form>
+</div>

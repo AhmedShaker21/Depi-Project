@@ -1,0 +1,62 @@
+﻿@model ELearningPlatform.View_Models.TakeExamViewModel
+
+@{
+    Layout = null; // Set your layout if needed
+}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Exam</h6>
+            <h1 class="mb-5">Take Your Exam</h1>
+        </div>
+
+        <form asp-action="SubmitExam" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="examId" value="@Model.ExamId" />
+            <input type="hidden" name="studentId" value="@Model.StudentId" />
+
+            <div class="row g-4">
+                @foreach (var question in Model.Questions)
+                {
+                    <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">@question.Title</h5>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="radio" name="selectedAnswers[@question.Id]" value="@question.AnswerOne" class="form-check-input" id="option1-@question.Id" required />
+                                        <label for="option1-@question.Id" class="form-check-label">@question.AnswerOne</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" name="selectedAnswers[@question.Id]" value="@question.AnswerTwo" class="form-check-input" id="option2-@question.Id" />
+                                        <label for="option2-@question.Id" class="form-check-label">@question.AnswerTwo</label>
+                                    </div>
+                                    @if (!string.IsNullOrEmpty(question.AnswerThree))
+                                    {
+                                        <div class="form-check">
+                                            <input type="radio" name="selectedAnswers[@question.Id]" value="@question.AnswerThree" class="form-check-input" id="option3-@question.Id" />
+                                            <label for="option3-@question.Id" class="form-check-label">@question.AnswerThree</label>
+                                        </div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(question.AnswerFour))
+                                    {
+                                        <div class="form-check">
+                                            <input type="radio" name="selectedAnswers[@question.Id]" value="@question.AnswerFour" class="form-check-input" id="option4-@question.Id" />
+                                            <label for="option4-@question.Id" class="form-check-label">@question.AnswerFour</label>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="col-lg-12 col-md-12 text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <button type="submit" class="btn btn-primary py-3 px-5">Submit Exam</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+

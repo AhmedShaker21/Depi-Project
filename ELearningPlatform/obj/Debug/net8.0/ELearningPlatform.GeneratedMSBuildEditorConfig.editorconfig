@@ -1,0 +1,191 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ELearningPlatform
+build_property.RootNamespace = ELearningPlatform
+build_property.ProjectDir = C:\Users\Samir\source\repos\ELearningPlatform\ELearningPlatform\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Samir\source\repos\ELearningPlatform\ELearningPlatform
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Authantication/instructorSignUP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGFudGljYXRpb25caW5zdHJ1Y3RvclNpZ25VUC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Authantication/Instructor_RegisterData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGFudGljYXRpb25cSW5zdHJ1Y3Rvcl9SZWdpc3RlckRhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Authantication/SignUp_Config.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGFudGljYXRpb25cU2lnblVwX0NvbmZpZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Authantication/studentSignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGFudGljYXRpb25cc3R1ZGVudFNpZ25VcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Authantication/Student_RegisterData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGFudGljYXRpb25cU3R1ZGVudF9SZWdpc3RlckRhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Authantication/Student_signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGFudGljYXRpb25cU3R1ZGVudF9zaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Authantication/User_Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGFudGljYXRpb25cVXNlcl9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Authantication/view.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGFudGljYXRpb25cdmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Code/AddCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZVxBZGRDb2RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Code/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Course/AddCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEFkZENvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Course/GetCoursesByInstructor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldENvdXJzZXNCeUluc3RydWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Course/GetCoursesByStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEdldENvdXJzZXNCeVN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Course/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Course/RegisterCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFJlZ2lzdGVyQ291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Course/UpdateCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFVwZGF0ZUNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Course/ViewCourseByStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFZpZXdDb3Vyc2VCeVN0dWRlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Course/ViewCoursesByStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFZpZXdDb3Vyc2VzQnlTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Document/AddDocumentToCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRcQWRkRG9jdW1lbnRUb0NvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Document/GetDocumentById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRcR2V0RG9jdW1lbnRCeUlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Exam/AddExamToLecture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxBZGRFeGFtVG9MZWN0dXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Exam/AddQuestionsToExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxBZGRRdWVzdGlvbnNUb0V4YW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Exam/GetExamById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxHZXRFeGFtQnlJZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Exam/TakeExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxUYWtlRXhhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Exam/_ExamResultPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbVxfRXhhbVJlc3VsdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Instructor/ViewDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxWaWV3RGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Lecture/AddLectureToCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZVxBZGRMZWN0dXJlVG9Db3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Lecture/GetAllLecturesByCourseByAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZVxHZXRBbGxMZWN0dXJlc0J5Q291cnNlQnlBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Lecture/ViewLecture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZVxWaWV3TGVjdHVyZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Lecture/ViewLectureByStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyZVxWaWV3TGVjdHVyZUJ5U3R1ZGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Shared/_Nav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Video/AddVideoToLecture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkZW9cQWRkVmlkZW9Ub0xlY3R1cmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Video/GetVideoById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkZW9cR2V0VmlkZW9CeUlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Samir/source/repos/ELearningPlatform/ELearningPlatform/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-0pbab2t7un

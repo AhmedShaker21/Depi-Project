@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "GetCoursesByInstructor";
+}
+
+<div class="container-xxl py-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Cover Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td>@course.Crs_Name</td>
+                    <td>@course.Crs_Description</td>
+                    <td>@course.Crs_Price.ToString("C")</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(course.Crs_Cover_Path))
+                        {
+                            <img src="@Url.Content("~/img/" + course.Crs_Cover_Path)" alt="@course.Crs_Name" style="width: 100px; height: auto;" />
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="AddLectureToCourse" asp-controller="Lecture" asp-route-id="@course.Id" class="btn btn-outline-primary">Add Lecture</a>
+                        <a asp-action="GetAllLecturesByCourseByAdmin" asp-controller="Lecture" asp-route-id="@course.Id" class="btn btn-outline-primary">View Lectures</a>
+                        <a asp-action="UpdateCourse" asp-route-id="@course.Id" class="btn btn-primary">Edit</a>
+                        <a asp-action="DeleteCourse" asp-route-id="@course.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

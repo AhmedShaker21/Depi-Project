@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as a Client or Freelancer</title>
+    <link rel="stylesheet" href="/css/SignUp_Config.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Join as a instructor or Student</h2>
+        <form asp-action="User_Kind">
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="role" value="Instructor" required>
+                    <div class="option-content">
+                        <!-- Link to the Instructor icon in assets/icons folder -->
+                        <img src="/img/Instructor.png">
+                        <span>I'm an Instructor, teaching for a Course</span>
+                    </div>
+                </label>
+
+                <label class="option">
+                    <input type="radio" name="role" value="Student" required>
+                    <div class="option-content">
+                        <!-- Link to the Student icon in assets/icons folder -->
+                        <img src="/img/Student.png" alt="Student Icon" width="40">
+                        <span>I'm a Student, looking for a Course</span>
+                    </div>
+                </label>
+            </div>
+
+            <button type="submit" id="createAccountBtn" disabled>Next</button>
+        </form>
+
+        <p>Already have an account? <a href="#">Log In</a></p>
+    </div>
+</body>
+    <script>
+	    // Get all radio inputs and the button
+	    const radioButtons = document.querySelectorAll('input[name="role"]');
+	    const createAccountBtn = document.getElementById('createAccountBtn');
+
+	    // Add event listener to each radio button
+	    radioButtons.forEach(radio => {
+		    radio.addEventListener('change', function() {
+			    // Enable and show the button when an option is selected
+			    createAccountBtn.disabled = false; // Enable the button
+			    createAccountBtn.style.display = 'block'; // Show the button
+		    });
+	    });
+    </script>
+
+</html>

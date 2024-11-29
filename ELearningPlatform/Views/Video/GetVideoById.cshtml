@@ -1,0 +1,59 @@
+﻿@* View for displaying video details *@
+@model Lecture_Videos
+
+@{
+    ViewData["Title"] = Model.Title; // Set the title to the video's title
+}
+
+<div class="container-xxl py-5 shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Video Details</h6>
+            <h1 class="mb-5">@Model.Title</h1>
+        </div>
+
+        <!-- Video Player Section -->
+        <div class="video-container text-center mb-5">
+            <video class="video-player shadow-lg rounded" width="800" height="450" controls>
+                <source src="@Url.Action("GetVideoById", "Video", new { id = Model.Id })" type="video/mp4" />
+                <!-- Fallback for browsers that don't support the video tag -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Video Information Section -->
+        <div class="text-center mt-4">
+            <h3>@Model.Title</h3>
+            <p class="text-muted">Here you can add more information about the video, provide links to related content, or anything else you think is relevant.</p>
+        </div>
+
+        <!-- Action Buttons Section -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary px-4 py-2 me-2" onclick="playVideo()">Play Video</button>
+            <button class="btn btn-secondary px-4 py-2" onclick="anotherAction()">Another Action</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Optional JavaScript to handle custom actions -->
+    <script>
+        function playVideo() {
+            var videoElement = document.querySelector('.video-player');
+            if (videoElement) {
+                videoElement.play();
+                alert('Video is playing!');
+            }
+        }
+
+        function anotherAction() {
+            alert('Another action triggered!');
+        }
+    </script>
+
+    @* Include validation scripts if necessary *@
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

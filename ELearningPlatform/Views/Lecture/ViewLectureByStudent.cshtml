@@ -1,0 +1,306 @@
+﻿@model Course_Lectures
+
+<div class="">
+    <div class="row">
+        <!-- Left Column: List of Videos, Documents, and Exams -->
+        <div class="col-4 p-3 bg-primary shadow rounded sticky-top" style="top: 10px;">
+            @if (Model.PrequestiesExam == false)
+            {
+                <!-- Display Videos -->
+                <h5 class="mb-4 text-center text-white border-bottom pb-2">Videos</h5>
+                @foreach (var video in Model.Videos)
+                {
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">@video.Title</span>
+                            <button class="btn btn-sm btn-outline-light view-content"
+                                    data-url="@Url.Action("GetVideoById", "Video", new { id = video.Id })"
+                                    data-type="video">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                }
+
+                <!-- Display Documents -->
+                <h5 class="mb-4 mt-5 text-center text-white border-bottom pb-2">Documents</h5>
+                @foreach (var document in Model.Documents)
+                {
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">@document.Title</span>
+                            <button class="btn btn-sm btn-outline-light view-content"
+                                    data-url="@Url.Action("GetDocumentById", "Document", new { id = document.Id })"
+                                    data-type="document">
+                                View
+                            </button>
+                        </div>
+                    </div>
+                }
+
+                <!-- Display Exams -->
+                <h5 class="mb-4 mt-5 text-center text-white border-bottom pb-2">Exams</h5>
+                @foreach (var exam in Model.Exams)
+                {
+                    var studentExam = Model.StudentExams.FirstOrDefault(se => se.ExamId == exam.Id && se.StudentId == 1);
+                    if (studentExam != null && studentExam.Date != null)
+                    {
+                        <div class="alert alert-info">Exam Completed: Grade - @studentExam.Grade%</div>
+                    }
+                    else
+                    {
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">@exam.Name</span>
+                            <button class="btn btn-sm btn-primary start-exam"
+                                    data-url="@Url.Action("StartExam", "Exam", new { examId = exam.Id, studentId = 1 })">
+                                Start Exam
+                            </button>
+                        </div>
+                    }
+                }
+            }
+            else
+            {
+                <!-- If there are prerequisite exams -->
+                <h5 class="mb-4 mt-5 text-center text-white border-bottom pb-2">Prerequisite Exams</h5>
+                @foreach (var exam in Model.Exams.Where(e => e.IsPreExam == true))
+                {
+                    var studentExam = Model.StudentExams.FirstOrDefault(se => se.ExamId == exam.Id && se.StudentId == 1);
+                    if (studentExam != null && studentExam.Date != null)
+                    {
+                        <div class="alert alert-info">Exam Completed: Grade - @studentExam.Grade%</div>
+                    }
+                    else
+                    {
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">@exam.Name</span>
+                            <button class="btn btn-sm btn-primary start-exam"
+                                    data-url="@Url.Action("StartExam", "Exam", new { examId = exam.Id, studentId = 1 })">
+                                Start Exam
+                            </button>
+                        </div>
+                    }
+                }
+
+                <!-- Display Videos and Documents (same structure as above) -->
+                <h5 class="mb-4 mt-5 text-center text-white border-bottom pb-2">Homework/Exams</h5>
+                @foreach (var exam in Model.Exams.Where(e => e.IsPreExam == false))
+                {
+                    var studentExam = Model.StudentExams.FirstOrDefault(se => se.ExamId == exam.Id && se.StudentId == 1);
+                    if (studentExam != null && studentExam.Date != null)
+                    {
+                        <div class="alert alert-info">Exam Completed: Grade - @studentExam.Grade%</div>
+                    }
+                    else
+                    {
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">@exam.Name</span>
+                            <button class="btn btn-sm btn-primary start-exam"
+                                    data-url="@Url.Action("StartExam", "Exam", new { examId = exam.Id, studentId = 1 })">
+                                Start Exam
+                            </button>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        <!-- Right Column: Display Content -->
+        <div class="col-7 mt-2 overflow-auto" style="height: 80vh;">
+            <div id="content-display" class="p-4 border rounded bg-light shadow-sm">
+                <h5 class="text-center text-muted">Select an item to view its content</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery for content loading -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Handle button clicks for viewing content
+        $('.view-content').click(function (e) {
+            e.preventDefault(); // Prevent default behavior
+            loadContent($(this).data('url'), $(this).data('type'));
+        });
+
+        // Handle "Start Exam" button clicks
+        $('.start-exam').click(function (e) {
+            e.preventDefault(); // Prevent default behavior
+            var url = $(this).data('url'); // Get the URL for starting the exam
+
+            // Show a loading spinner in the content display area
+            showLoadingSpinner();
+
+            // Load the exam content
+            $.get(url, function (data) {
+                $('#content-display').html(data); // Load the exam view into col-7
+            }).fail(function () {
+                showError('Error loading exam. Please try again.');
+            });
+        });
+
+        // Function to show loading spinner
+        function showLoadingSpinner() {
+            $('#content-display').html(
+                <div class="text-center mt-3" >
+            <div class="spinner-border" role = "status" >
+            <span class="visually-hidden" > Loading...</span>
+            < /div>
+            < /div>
+            );
+        }
+
+        // Function to show error message
+        function showError(message) {
+            $('#content-display').html(<p class="text-danger" > ${ message } < /p>);
+            }
+
+        // Function to load content based on the type
+        function loadContent(url, type) {
+            // Show a loading spinner in the content display area
+            showLoadingSpinner();
+
+            // Load the content based on the type
+            if (type === 'video') {
+                $.get(url, function () {
+                    $('#content-display').html(
+                        <video width="100%" controls class= "rounded" >
+                        <source src="${url}" type = "video/mp4" />
+                        Your browser does not support the video tag.
+                                < /video>
+                    );
+                }).fail(function () {
+                    showError('Error loading video. Please try again.');
+                });
+            } else if (type === 'document') {
+                $.get(url, function (data) {
+                    if (url.endsWith('.pdf')) {
+                        $('#content-display').html(
+                            <embed src="${url}" width = "100%" height = "600px" type = "application/pdf" class= "rounded" />
+                                );
+                    } else {
+                        $('#content-display').html(
+                            <div class="text-center" >
+                        <h5 class="mb-3" > Document < /h5>
+                        < a href = "${url}" class= "btn btn-primary" download > Download Document < /a>
+                        < /div>
+                        );
+                    }
+                }).fail(function () {
+                    showError('Error loading document. Please try again.');
+                });
+            } else {
+                $.get(url, function (data) {
+                    $('#content-display').html(data);
+                }).fail(function () {
+                    showError('Error loading content. Please try again.');
+                });
+            }
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">@Model.Name</h6>
+            <h1 class="mb-5">Lecture Details</h1>
+        </div>
+
+        <div class="accordion" id="accordionExample">
+
+            <!-- Accordion Item 1: Videos -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Videos <span class="ms-auto me-3">Number of Videos: @Model.Videos.Count</span>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="text-center mt-4">
+                        </div>
+                        @foreach (var video in Model.Videos)
+                        {
+                            <div class="card mb-2">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <span>@video.Title</span>
+                                    <div>
+                                        <a href="/Video/GetVideoById/@video.Id" class="btn btn-primary">View Video</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item 2: Documents -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Documents <span class="ms-auto me-3">Number of Documents: @Model.Documents.Count</span>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="text-center mt-4">
+                        </div>
+                        @foreach (var document in Model.Documents)
+                        {
+                            <div class="card mb-2">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <span>@document.Title</span>
+                                    <div>
+                                        <a href="/Document/GetDocumentById/@document.Id" class="btn btn-primary">View Document</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Exams <span class="ms-auto me-3">Number of Exams: @Model.Exams.Count</span>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="text-center mt-4">
+                        </div>
+                        @foreach (var exam in Model.Exams)
+                        {
+                            <div class="card mb-2">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <span>@exam.Name</span>
+                                    <div>
+                                        <a href="/Exam/GetExamById/@exam.Id" class="btn btn-primary">View Exam</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> *@

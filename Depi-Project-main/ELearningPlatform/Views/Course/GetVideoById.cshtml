@@ -1,0 +1,41 @@
+﻿@model Lecture_Videos
+
+@{
+    ViewData["Title"] = Model.Title; // Set the title to the video's title
+}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Video Details</h6>
+            <h1 class="mb-5">@Model.Title</h1>
+        </div>
+
+        <div >
+            <h3>@Model.Title</h3>
+            <video controls="controls">
+                <source src="@Url.Action("GetVideoById", "Video", new { id = Model.Id })" type="video/mp4" />
+            </video>
+        </div>
+
+        <!-- Additional Content Here -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="alert('Video Play Button Clicked!')">Play Video</button>
+            <button class="btn btn-secondary" onclick="alert('Another Action!')">Another Action</button>
+        </div>
+
+        <div class="mt-4">
+            <p>
+                Here you can add more information about the video, provide links to related content, or anything else you think is relevant.
+            </p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

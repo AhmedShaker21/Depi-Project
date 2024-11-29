@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white; /* Replace with your desired background color */
+    color: #00BFFF;
+}
+.Title
+{
+	margin-right:80%;
+}
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white; /* Semi-transparent background for the form */
+    border-radius: 30px;
+	border-color:#00BFFF;
+	
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+	margin-right:20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    
+    border-radius: 10px;
+	border-color: rgba(0, 0, 0, 1);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00BFFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+	border-radius: 30px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

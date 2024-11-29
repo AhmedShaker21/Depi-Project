@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "GetExamById";
+}
+@model Lecture_Exams
+<div class="container-xxl py-5 shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Add Video</h6>
+            <h1 class="mb-5">Add Questions To Exam</h1>
+        </div>
+        <form asp-action="UpdateExam" asp-controller="Course" method="post" class="row mt-4">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="form-group">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" value="@Model.Name" placeholder="Enter Lecture Name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="form-group">
+                        <label asp-for="Description" class="form-label"></label>
+                        <input asp-for="Description" class="form-control" value="@Model.Description" placeholder="Enter Lecture Price" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            @foreach (var question in Model.ExamQuestions)
+            {
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Question ${i + 1}</h5>
+                        <div class="mb-3">
+                            <label for="Questions_${i}__Title" class="form-label">Question Title:</label>
+                            <input type="text" id="Questions_${i}__Title" name="Title" class="form-control" value="@question.Title" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Questions_${i}__AnswerOne" class="form-label">Answer One:</label>
+                            <input type="text" id="Questions_${i}__AnswerOne" name="AnswerOne" class="form-control" value="@question.AnswerOne" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Questions_${i}__AnswerTwo" class="form-label">Answer Two:</label>
+                            <input type="text" id="Questions_${i}__AnswerTwo" name="AnswerTwo" class="form-control" value="@question.AnswerTwo" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Questions_${i}__AnswerThree" class="form-label">Answer Three (Optional):</label>
+                            <input type="text" id="Questions_${i}__AnswerThree" name="AnswerThree" class="form-control" value="@question.AnswerThree" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Questions_${i}__AnswerFour" class="form-label">Answer Four (Optional):</label>
+                            <input type="text" id="Questions_${i}__AnswerFour" name="AnswerFour" class="form-control" value="@question.AnswerFour" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Questions_${i}__CorrectAnswer" class="form-label">Correct Answer:</label>
+                            <input type="text" id="Questions_${i}__CorrectAnswer" name="CorrectAnswer" class="form-control" value="@question.CorrectAnswer" required />
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="col-lg-12 col-md-12 text-center wow fadeInUp" data-wow-delay="0.3s">
+                <button type="submit" class="btn btn-primary py-3 px-5">Add Course</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

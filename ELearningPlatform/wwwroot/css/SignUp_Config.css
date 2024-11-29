@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.container {
+    text-align: center;
+	border-radius: 5px;
+
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    gap:30px;
+    margin-bottom: 20px;
+}
+
+.option {
+    cursor: pointer;
+    border: 2px solid #00BFFF; /* Set static border color */
+    border-radius: 5px;
+    padding: 10px;
+    transition: border-color 0.3s;
+    width: 150px;
+    text-align: center;
+	margin:10px;
+	width:100%;
+}
+
+.option.selected {
+    border-color: black; /* Optional: You can keep a different color for selected option */
+}
+
+.option input {
+    display: none;
+	
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-content img {
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+button:enabled {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "ViewDashboard";
+}
+
+@{
+    ViewBag.Title = "Instructor Dashboard";
+    int instructorId = ViewBag.InstructorId ?? 1; // Assume instructor ID is passed or default to 1
+}
+
+<div class="">
+    <div class="row">
+        <!-- Sidebar with buttons -->
+        <div class="col-4 p-3 bg-light shadow rounded sticky-top" style="top: 10px;">
+            <button id="btnAllCourses" class="btn btn-primary w-100 mb-3">All Courses</button>
+            <button id="btnAddCourse" class="btn btn-success w-100">Add Course</button>
+        </div>
+
+        <!-- Content Display Area -->
+        <div class="col-7 mt-2 overflow-auto" style="height: 80vh;">
+            <div id="content-display" class="p-4 border rounded bg-light shadow-sm">
+                <h5 class="text-center text-muted">Select an option to view its content</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery for dynamic content loading -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Click event for All Courses button
+        $('#btnAllCourses').click(function () {
+            loadContent('@Url.Action("GetCoursesByInstructor", "Course", new { id = instructorId })');
+        });
+
+        // Click event for Add Course button
+        $('#btnAddCourse').click(function () {
+            loadContent('@Url.Action("AddCourseByInstructor", "Course", new { id = instructorId })');
+        });
+
+        // Function to load content dynamically
+        function loadContent(url) {
+            // Show a loading spinner in the content display area
+            showLoadingSpinner();
+
+            // Load the content via AJAX
+            $.get(url, function (data) {
+                $('#content-display').html(data);
+            }).fail(function () {
+                showError('Error loading content. Please try again.');
+            });
+        }
+
+        // Function to show loading spinner
+        function showLoadingSpinner() {
+            $('#content-display').html(
+                '<div class="text-center mt-3">' +
+                '<div class="spinner-border" role="status">' +
+                '<span class="visually-hidden">Loading...</span>' +
+                '</div>' +
+                '</div>'
+            );
+        }
+
+        // Function to show error message
+        function showError(message) {
+            $('#content-display').html('<p class="text-danger">' + message + '</p>');
+        }
+    });
+</script>
+
+

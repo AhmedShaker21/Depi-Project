@@ -1,0 +1,67 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ELearningPlatform.View_Models.ExamResultViewModel
+
+@if (Model.Results == null || !Model.Results.Any())
+{
+    <p>No results available.</p>
+}
+else
+{
+    <div class="row g-4">
+        <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title">Summary</h4>
+                    <p class="card-text">
+                        <strong>Correct Answers:</strong> @Model.CorrectAnswers / @Model.TotalQuestions <br />
+                        <strong>Score:</strong> <span class="badge bg-success">@((double)Model.CorrectAnswers / Model.TotalQuestions * 100)%</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Question</th>
+                                <th>Your Answer</th>
+                                <th>Correct Answer</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var result in Model.Results)
+                            {
+                                <tr>
+                                    <td>@result.ExamQuestion</td>
+                                    <td>@result.SelectedAnswer</td>
+                                    <td>@result.CorrectAnswer</td>
+                                    <td>
+                                        @if (result.IsCorrect)
+                                        {
+                                            <span class="badge bg-success">Correct</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger">Incorrect</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 text-center wow fadeInUp" data-wow-delay="0.5s">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary py-3 px-5">Return to Dashboard</a>
+        </div>
+    </div>
+}

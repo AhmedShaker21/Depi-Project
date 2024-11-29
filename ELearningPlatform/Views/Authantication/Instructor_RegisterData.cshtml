@@ -1,0 +1,44 @@
+﻿@{
+	Layout = null;
+}
+@model InstructorAccount
+<link rel="stylesheet" href="/css/SignUp.css">
+<div class="Title">
+	<h1>E-Learning</h1>
+</div>
+<div class="container" asp-validation-summary="All">
+	<h1>Sign Up</h1>
+	<form asp-action="Instructor_RegisterData" style="display: flex; flex-direction: column; gap: 5px;">
+
+		<div class="form-group">
+			<label for="Name">Full Name</label>
+			<input asp-for="Name" required>
+			<span asp-validation-for="Name" class="text-danger"> </span>
+		</div>
+
+		<div class="form-group">
+			<label for="gender">Gender</label>
+			<input asp-for="Gender" required>
+			<span asp-validation-for="Gender" class="text-danger"> </span>
+		</div>
+
+		<div class="form-group">
+			<label for="@Model.Street">Address</label>
+			<input asp-for="Street" required>
+			<span asp-validation-for="Street" class="text-danger"> </span>
+		</div>
+
+		<div class="form-group">
+			<label for="@Model.City">City</label>
+			<input asp-for="City" required>
+			<span asp-validation-for="City" class="text-danger"> </span>
+		</div>
+
+		<div class="form-group">
+			<label for="country">Country</label>
+			<input asp-for="Country" required>
+			<span asp-validation-for="Country" class="text-danger"> </span>
+		</div>
+		<button type="submit">Next</button>
+	</form>
+</div>

@@ -1,0 +1,54 @@
+﻿@{
+	Layout = null;
+}
+@model InstructorAccount
+<link rel="stylesheet" href="/css/SignUp.css">
+<div class="Title">
+	<h1>E-Learning</h1>
+</div>
+<div class="container">
+	<h1>Sign Up</h1>
+	<form asp-action="Instructor_Register" method="post" style="display: flex; flex-direction: column; gap: 5px;">
+
+		<div class="form-group">
+			<label for="username">User Name</label>
+			<input asp-for="UserName" required />
+			<span asp-validation-for="UserName" class="text-danger" style="color:darkred"> </span>
+		</div>
+
+		<div class="form-group">
+			<label for="email">Email Address</label>
+			<input asp-for="Email" required />
+			<span asp-validation-for="Email" class="text-danger" style="color:darkred"> </span>
+		</div>
+
+		<div class="form-group">
+			<label for="phone">Phone Number</label>
+			<input asp-for="PhoneNumber" required />
+			<span asp-validation-for="PhoneNumber" class="text-danger" style="color:darkred"> </span>
+		</div>
+
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input asp-for="Password" required type="password" />
+			<span asp-validation-for="Password" class="text-danger" style="color:darkred"> </span>
+		</div>
+
+		<div class="form-group">
+			<label for="confirmpassword">Confirm Password</label>
+			<input asp-for="ConfirmPassword" required type="password" />
+			<span asp-validation-for="ConfirmPassword" class="text-danger" style="color:darkred"> </span>
+		</div>
+
+		<!-- Hidden fields for values set earlier -->
+		<input type="hidden" asp-for="Name" />
+		<input type="hidden" asp-for="Country" />
+		<input type="hidden" asp-for="Gender" />
+		<input type="hidden" asp-for="City" />
+		<input type="hidden" asp-for="Street" />
+
+		<button type="submit">Create Account</button>
+	</form>
+	<partial name="_ValidationScriptsPartial">
+
+</div>

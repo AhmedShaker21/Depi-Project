@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Course_Codes>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-xxl py-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CodeID</th>
+                <th>Code</th>
+                <th>Course</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var code in Model)
+            {
+                <tr>
+                    <td>@code.Id</td>
+                    <td>@code.Code</td>
+                    <td>@code.Course.Crs_Name</td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@code.Id" asp-controller= "Code" class="btn btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@code.Id" asp-controller="Code" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
